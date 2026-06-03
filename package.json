@@ -1,0 +1,29 @@
+{
+  "name": "portfolio-edgar-rico",
+  "version": "1.0.0",
+  "description": "Personal portfolio website showcasing my Software Engineering background,\r featured projects, technical skills, and software quality practices.",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YahelR14/portfolio-edgar-rico.git"
+  },
+  "keywords": [
+    "portfolio",
+    "software-engineering",
+    "astro"
+],
+  "author": "Edgar Rico",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YahelR14/portfolio-edgar-rico/issues"
+  },
+  "homepage": "https://github.com/YahelR14/portfolio-edgar-rico#readme",
+  "dependencies": {
+    "astro": "^6.4.3"
+  }
+}

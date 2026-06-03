@@ -1,3 +1,15 @@
+# Astro build output
+dist/
+.astro/
+
+# Editor folders
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
 # Logs
 logs
 *.log
