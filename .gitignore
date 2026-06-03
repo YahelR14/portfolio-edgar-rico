@@ -6,6 +6,12 @@ dist/
 .vscode/
 .idea/
 
+# Local Codex skills
+.agents/skills/
+.codex/
+AGENTS.md
+PRODUCT.md
+
 # Operating system files
 .DS_Store
 Thumbs.db
