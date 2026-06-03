@@ -575,6 +575,19 @@ ul {
   text-decoration: none;
 }
 
+.contact-list a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.contact-list__icon {
+  width: 1.15rem;
+  height: 1.15rem;
+  flex: 0 0 auto;
+  color: var(--color-accent-ink);
+}
+
 .contact-list__note {
   color: var(--color-muted);
   font-weight: var(--font-weight-medium);
