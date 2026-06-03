@@ -15,4 +15,15 @@ technologies:
 
 ## Descripción
 
-Caso de estudio en desarrollo.
+CoffeeRank TJ es una plataforma web para explorar cafeterías locales y organizar reseñas de usuarios. El caso muestra cómo convertir una necesidad de comunidad local en una experiencia web con estructura de datos, navegación y criterios de interacción.
+
+## Evidencia técnica
+
+- Desarrollo de interfaz con HTML, CSS y JavaScript.
+- Lógica de aplicación con PHP.
+- Diseño de base de datos relacional en MySQL.
+- Análisis de flujos para búsqueda, lectura de reseñas y registro de información.
+
+## Lo que demuestra
+
+Este proyecto evidencia desarrollo web full stack en etapa formativa, con atención a estructura de datos, experiencia de usuario y organización de contenido para un producto local.

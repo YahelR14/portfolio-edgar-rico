@@ -1,0 +1,39 @@
+---
+interface SkillGroup {
+  title: string;
+  description: string;
+  items: string[];
+}
+
+interface Props {
+  groups: SkillGroup[];
+}
+
+const { groups } = Astro.props;
+
+const toId = (value: string) =>
+  value
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+---
+
+<div class="skills-grid">
+  {
+    groups.map((group) => (
+      <section class="skill-group" aria-labelledby={`skill-${toId(group.title)}`}>
+        <div>
+          <h3 id={`skill-${toId(group.title)}`}>{group.title}</h3>
+          <p>{group.description}</p>
+        </div>
+        <ul class="skill-tags" aria-label={`Tecnologías y prácticas de ${group.title}`}>
+          {group.items.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </section>
+    ))
+  }
+</div>

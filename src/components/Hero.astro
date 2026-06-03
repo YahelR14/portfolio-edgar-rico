@@ -1,0 +1,49 @@
+---
+import { Image } from "astro:assets";
+import profileImage from "../assets/images/profile/yoooo.jpeg";
+---
+
+<section class="hero section" aria-labelledby="hero-title">
+  <div class="section__inner hero__inner">
+    <div class="hero__content">
+      <p class="hero__label">Estudiante de Ingeniería de Software</p>
+      <h1 id="hero-title">
+        Web, datos y calidad para construir software útil.
+      </h1>
+      <p class="hero__summary">
+        Construyo y documento proyectos que conectan análisis, interfaces, datos y pruebas para oportunidades trainee, internship y junior developer.
+      </p>
+      <div class="hero__actions" aria-label="Acciones principales">
+        <a class="button button--primary" href="#proyectos">Ver proyectos</a>
+        <a class="button button--secondary" href="#contacto">Contactar</a>
+      </div>
+    </div>
+
+    <aside class="hero__evidence" aria-label="Resumen de evidencia profesional">
+      <div class="hero__portrait-wrap">
+        <Image
+          src={profileImage}
+          alt="Retrato de Edgar Rico"
+          class="hero__portrait"
+          widths={[320, 480, 640]}
+          sizes="(max-width: 900px) 70vw, 320px"
+          loading="eager"
+        />
+      </div>
+      <div class="evidence-list">
+        <p>
+          <span>Web</span>
+          PHP, HTML, CSS, JavaScript y Astro.
+        </p>
+        <p>
+          <span>Calidad</span>
+          Automatización con Selenium, TestNG y Maven.
+        </p>
+        <p>
+          <span>Análisis</span>
+          Requisitos, casos de uso, FURPS+ y trazabilidad.
+        </p>
+      </div>
+    </aside>
+  </div>
+</section>

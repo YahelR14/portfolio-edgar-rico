@@ -1,0 +1,45 @@
+---
+const { project } = Astro.props;
+const slug = project.id.replace(/\.md$/, "");
+
+const statusLabels = {
+  completed: "Completado",
+  "in-progress": "En desarrollo",
+  planned: "Planeado",
+};
+---
+
+<article class="project-card">
+  <div class="project-card__topline">
+    <span class="project-card__status">{statusLabels[project.data.status]}</span>
+    <span>{project.data.role}</span>
+  </div>
+  <h3>{project.data.title}</h3>
+  <p>{project.data.shortDescription}</p>
+  <ul class="project-card__tags" aria-label={`Tecnologías usadas en ${project.data.title}`}>
+    {
+      project.data.technologies.map((technology) => (
+        <li>{technology}</li>
+      ))
+    }
+  </ul>
+  <div class="project-card__actions">
+    <a href={`/proyectos/${slug}/`} aria-label={`Ver caso de estudio de ${project.data.title}`}>
+      Ver caso de estudio
+    </a>
+    {
+      project.data.repositoryUrl && (
+        <a href={project.data.repositoryUrl} target="_blank" rel="noreferrer">
+          Repositorio
+        </a>
+      )
+    }
+    {
+      project.data.demoUrl && (
+        <a href={project.data.demoUrl} target="_blank" rel="noreferrer">
+          Demo
+        </a>
+      )
+    }
+  </div>
+</article>

@@ -1,2 +1,135 @@
-<h1> hola mundo <h1/>
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import SkillsGrid from "../components/SkillsGrid.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import ContactSection from "../components/ContactSection.astro";
+import Footer from "../components/Footer.astro";
+
+const projects = (await getCollection("projects"))
+  .filter((project) => project.data.featured)
+  .sort((a, b) => a.data.order - b.data.order);
+
+const skillGroups = [
+  {
+    title: "Desarrollo web",
+    description: "Construcción de interfaces y sitios con estructura clara, contenido mantenible y despliegue estático.",
+    items: ["Astro", "TypeScript", "HTML", "CSS", "JavaScript", "PHP"],
+  },
+  {
+    title: "Bases de datos",
+    description: "Diseño relacional y consultas orientadas a necesidades concretas de proyecto.",
+    items: ["MySQL", "Modelo relacional", "Diseño de tablas", "Consultas SQL"],
+  },
+  {
+    title: "Calidad de software",
+    description: "Validación de flujos críticos, automatización y lectura de resultados para mejorar confianza en el producto.",
+    items: ["Selenium WebDriver", "TestNG", "Maven", "Diseño de pruebas", "Análisis de resultados"],
+  },
+  {
+    title: "Requisitos y UX/UI",
+    description: "Traducción de necesidades a casos de uso, criterios y decisiones de experiencia.",
+    items: ["FURPS+", "Casos de uso", "Matriz de trazabilidad", "Wireframes", "UX/UI"],
+  },
+];
+---
+
+<BaseLayout>
+  <Header />
+
+  <main id="contenido">
+    <Hero />
+
+    <section id="perfil" class="section about-section" aria-labelledby="about-title">
+      <div class="section__inner about-section__inner">
+        <div class="section-heading">
+          <h2 id="about-title">Perfil</h2>
+          <p>
+            Me interesa construir software que pueda explicarse, probarse y mantenerse. Mi trabajo conecta la parte visual del producto con requisitos, datos y criterios de calidad.
+          </p>
+        </div>
+
+        <div class="about-section__body">
+          <p>
+            Soy Edgar Rico, estudiante de Ingeniería de Software. Uso proyectos académicos y personales para practicar desarrollo web, documentación funcional, diseño de bases de datos y automatización QA.
+          </p>
+          <p>
+            Este sitio está diseñado para que reclutadores y equipos técnicos puedan revisar evidencia concreta: qué problema aborda cada proyecto, qué rol tuve, qué tecnologías usé y qué prácticas de ingeniería aparecen en el proceso.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="habilidades" class="section skills-section" aria-labelledby="skills-title">
+      <div class="section__inner">
+        <div class="section-heading section-heading--compact">
+          <h2 id="skills-title">Habilidades técnicas</h2>
+          <p>
+            Agrupadas por el tipo de evidencia que un equipo puede revisar en los proyectos.
+          </p>
+        </div>
+        <SkillsGrid groups={skillGroups} />
+      </div>
+    </section>
+
+    <section id="proyectos" class="section projects-section" aria-labelledby="projects-title">
+      <div class="section__inner">
+        <div class="section-heading">
+          <h2 id="projects-title">Proyectos destacados</h2>
+          <p>
+            Tres casos que muestran desarrollo web, automatización QA, análisis de requisitos, UX/UI y diseño funcional.
+          </p>
+        </div>
+
+        <div class="project-list">
+          {projects.map((project) => <ProjectCard project={project} />)}
+        </div>
+      </div>
+    </section>
+
+    <section id="educacion" class="section education-section" aria-labelledby="education-title">
+      <div class="section__inner education-section__inner">
+        <div class="section-heading section-heading--compact">
+          <h2 id="education-title">Educación</h2>
+          <p>
+            Formación enfocada en fundamentos de ingeniería, análisis, desarrollo y calidad.
+          </p>
+        </div>
+
+        <div class="education-panel">
+          <p class="education-panel__label">Formación actual</p>
+          <h3>Ingeniería de Software</h3>
+          <p>
+            Institución, periodo y estado académico: pendiente de completar.
+          </p>
+          <ul>
+            <li>Análisis y documentación de requisitos.</li>
+            <li>Desarrollo de aplicaciones web y lógica de negocio.</li>
+            <li>Modelado de datos, pruebas y mantenimiento.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section resume-section" aria-labelledby="resume-title">
+      <div class="section__inner resume-section__inner">
+        <div>
+          <h2 id="resume-title">Currículum</h2>
+          <p>
+            El sitio ya reserva un punto claro para descargar el CV. El archivo final todavía debe agregarse a <code>public/cv/</code>.
+          </p>
+        </div>
+        <a class="button button--primary" href="/cv/edgar-rico-cv.pdf" download>
+          Descargar CV pendiente
+        </a>
+      </div>
+    </section>
+
+    <ContactSection />
+  </main>
+
+  <Footer />
+</BaseLayout>
 

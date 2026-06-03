@@ -1,0 +1,60 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+
+  return projects.map((project) => ({
+    params: { slug: project.id.replace(/\.md$/, "") },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+
+const statusLabels = {
+  completed: "Completado",
+  "in-progress": "En desarrollo",
+  planned: "Planeado",
+};
+---
+
+<BaseLayout title={`${project.data.title} | Edgar Rico`} description={project.data.shortDescription}>
+  <Header />
+
+  <main id="contenido" class="project-detail">
+    <section class="section project-detail__hero" aria-labelledby="project-title">
+      <div class="section__inner project-detail__hero-inner">
+        <a class="back-link" href="/#proyectos">Volver a proyectos</a>
+        <div class="project-detail__title-block">
+          <p class="project-detail__status">{statusLabels[project.data.status]}</p>
+          <h1 id="project-title">{project.data.title}</h1>
+          <p>{project.data.shortDescription}</p>
+        </div>
+
+        <dl class="project-facts">
+          <div>
+            <dt>Rol</dt>
+            <dd>{project.data.role}</dd>
+          </div>
+          <div>
+            <dt>Tecnologías</dt>
+            <dd>{project.data.technologies.join(", ")}</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <article class="section project-content" aria-label={`Caso de estudio de ${project.data.title}`}>
+      <div class="section__inner project-content__inner">
+        <Content />
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+</BaseLayout>

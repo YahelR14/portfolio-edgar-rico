@@ -1,0 +1,28 @@
+---
+const navItems = [
+  { href: "/#perfil", label: "Perfil" },
+  { href: "/#habilidades", label: "Habilidades" },
+  { href: "/#proyectos", label: "Proyectos" },
+  { href: "/#educacion", label: "Educación" },
+  { href: "/#contacto", label: "Contacto" },
+];
+---
+
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<header class="site-header" aria-label="Navegación principal">
+  <div class="site-header__inner">
+    <a class="brand-mark" href="/" aria-label="Ir al inicio">
+      <span class="brand-mark__symbol" aria-hidden="true">ER</span>
+      <span class="brand-mark__text">Edgar Rico</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Secciones del sitio">
+      {
+        navItems.map((item) => (
+          <a href={item.href}>{item.label}</a>
+        ))
+      }
+    </nav>
+  </div>
+</header>
