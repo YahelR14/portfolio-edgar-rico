@@ -11,6 +11,10 @@ technologies:
   - "HTML"
   - "CSS"
   - "JavaScript"
+evidence:
+  - "Modelo relacional para reseñas, cafeterías y usuarios."
+  - "Flujos de descubrimiento, lectura de reseñas y registro de información."
+  - "Interfaz web orientada a una comunidad local de Tijuana."
 ---
 
 ## Descripción

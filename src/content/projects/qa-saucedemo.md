@@ -5,11 +5,16 @@ featured: true
 order: 2
 status: "completed"
 role: "Diseño de pruebas, automatización y análisis de resultados"
+highlight: true
 technologies:
   - "Java"
   - "Selenium WebDriver"
   - "TestNG"
   - "Maven"
+evidence:
+  - "Suite automatizada para autenticación, catálogo, carrito y checkout."
+  - "Ejecución organizada con Maven y TestNG para repetir pruebas críticas."
+  - "Lectura de resultados para comunicar hallazgos de calidad."
 ---
 
 ## Descripción

@@ -281,7 +281,7 @@ ul {
 
 .hero__inner {
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(17rem, 0.72fr);
+  grid-template-columns: minmax(0, 1fr) minmax(15rem, 21rem);
   align-items: end;
   gap: clamp(2rem, 6vw, 5.5rem);
 }
@@ -316,6 +316,9 @@ ul {
 .hero__evidence {
   display: grid;
   gap: var(--space-lg);
+  width: 100%;
+  max-width: 21rem;
+  justify-self: end;
 }
 
 .hero__portrait-wrap {
@@ -389,6 +392,11 @@ ul {
   color: var(--color-muted);
 }
 
+.skill-group__proof {
+  color: var(--color-ink);
+  font-weight: var(--font-weight-medium);
+}
+
 .skill-tags,
 .project-card__tags {
   display: flex;
@@ -431,6 +439,15 @@ ul {
   max-width: 14ch;
 }
 
+.project-card--lead {
+  grid-column: span 2;
+}
+
+.project-card--lead h3 {
+  max-width: 18ch;
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+}
+
 .project-card p {
   color: var(--color-muted);
 }
@@ -450,6 +467,25 @@ ul {
   color: var(--color-accent-ink);
   padding: 0.3rem 0.55rem;
   font-weight: var(--font-weight-bold);
+}
+
+.project-card__lead {
+  border-radius: 999px;
+  background: var(--color-ink);
+  color: var(--color-white);
+  padding: 0.3rem 0.55rem;
+  font-weight: var(--font-weight-bold);
+}
+
+.project-card__evidence {
+  display: grid;
+  gap: var(--space-sm);
+  padding-left: 1.1rem;
+  color: var(--color-muted);
+}
+
+.project-card__evidence li::marker {
+  color: var(--color-accent-ink);
 }
 
 .project-card__actions {
@@ -537,6 +573,11 @@ ul {
   color: var(--color-ink);
   font-weight: var(--font-weight-bold);
   text-decoration: none;
+}
+
+.contact-list__note {
+  color: var(--color-muted);
+  font-weight: var(--font-weight-medium);
 }
 
 .site-footer {
@@ -667,7 +708,8 @@ ul {
   }
 
   .hero__evidence {
-    max-width: 31rem;
+    max-width: 24rem;
+    justify-self: start;
   }
 }
 
@@ -689,6 +731,10 @@ ul {
     grid-template-columns: 1fr;
   }
 
+  .project-card--lead {
+    grid-column: auto;
+  }
+
   .skill-group:nth-child(odd) {
     border-right: 0;
   }
@@ -700,6 +746,10 @@ ul {
   .evidence-list p {
     grid-template-columns: 1fr;
     gap: var(--space-xs);
+  }
+
+  .hero__evidence {
+    max-width: 21rem;
   }
 }
 

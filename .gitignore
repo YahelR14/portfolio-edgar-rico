@@ -11,6 +11,7 @@ dist/
 .codex/
 AGENTS.md
 PRODUCT.md
+DESIGN.md
 
 # Operating system files
 .DS_Store

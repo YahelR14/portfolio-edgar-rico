@@ -9,6 +9,10 @@ technologies:
   - "FURPS+"
   - "Casos de uso"
   - "Matriz de trazabilidad"
+evidence:
+  - "Requisitos organizados con criterios FURPS+."
+  - "Casos de uso para actores y flujos académicos principales."
+  - "Matriz de trazabilidad para conectar requisitos y validación."
 ---
 
 ## Descripción

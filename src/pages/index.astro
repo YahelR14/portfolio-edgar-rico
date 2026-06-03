@@ -10,28 +10,38 @@ import Footer from "../components/Footer.astro";
 
 const projects = (await getCollection("projects"))
   .filter((project) => project.data.featured)
-  .sort((a, b) => a.data.order - b.data.order);
+  .sort((a, b) => {
+    if (a.data.highlight !== b.data.highlight) {
+      return a.data.highlight ? -1 : 1;
+    }
+
+    return a.data.order - b.data.order;
+  });
 
 const skillGroups = [
   {
     title: "Desarrollo web",
     description: "Construcción de interfaces y sitios con estructura clara, contenido mantenible y despliegue estático.",
-    items: ["Astro", "TypeScript", "HTML", "CSS", "JavaScript", "PHP"],
+    items: ["Astro", "TypeScript", "HTML", "CSS", "JavaScript"],
+    proof: "Evidencia en CoffeeRank TJ y en este portfolio construido con Astro.",
   },
   {
     title: "Bases de datos",
     description: "Diseño relacional y consultas orientadas a necesidades concretas de proyecto.",
-    items: ["MySQL", "Modelo relacional", "Diseño de tablas", "Consultas SQL"],
+    items: ["MySQL", "Modelo relacional", "Consultas SQL"],
+    proof: "Evidencia en el modelo relacional de CoffeeRank TJ.",
   },
   {
     title: "Calidad de software",
     description: "Validación de flujos críticos, automatización y lectura de resultados para mejorar confianza en el producto.",
-    items: ["Selenium WebDriver", "TestNG", "Maven", "Diseño de pruebas", "Análisis de resultados"],
+    items: ["Selenium WebDriver", "TestNG", "Maven", "Diseño de pruebas"],
+    proof: "Evidencia principal en SauceDemo QA Automation.",
   },
   {
     title: "Requisitos y UX/UI",
     description: "Traducción de necesidades a casos de uso, criterios y decisiones de experiencia.",
-    items: ["FURPS+", "Casos de uso", "Matriz de trazabilidad", "Wireframes", "UX/UI"],
+    items: ["FURPS+", "Casos de uso", "Trazabilidad", "UX/UI"],
+    proof: "Evidencia en CIMA y CoffeeRank TJ.",
   },
 ];
 ---
@@ -79,7 +89,7 @@ const skillGroups = [
         <div class="section-heading">
           <h2 id="projects-title">Proyectos destacados</h2>
           <p>
-            Tres casos que muestran desarrollo web, automatización QA, análisis de requisitos, UX/UI y diseño funcional.
+            El primer caso prioriza calidad de software porque está completado. Los otros dos muestran análisis, datos, UX/UI y desarrollo web en progreso.
           </p>
         </div>
 
@@ -102,7 +112,7 @@ const skillGroups = [
           <p class="education-panel__label">Formación actual</p>
           <h3>Ingeniería de Software</h3>
           <p>
-            Institución, periodo y estado académico: pendiente de completar.
+            Formación centrada en análisis, desarrollo web, modelado de datos, pruebas y mantenimiento de software.
           </p>
           <ul>
             <li>Análisis y documentación de requisitos.</li>
@@ -118,11 +128,11 @@ const skillGroups = [
         <div>
           <h2 id="resume-title">Currículum</h2>
           <p>
-            El sitio ya reserva un punto claro para descargar el CV. El archivo final todavía debe agregarse a <code>public/cv/</code>.
+            La descarga se activará cuando el PDF final esté en <code>public/cv/edgar-rico-cv.pdf</code>. Por ahora, GitHub es el canal verificable disponible.
           </p>
         </div>
-        <a class="button button--primary" href="/cv/edgar-rico-cv.pdf" download>
-          Descargar CV pendiente
+        <a class="button button--primary" href="https://github.com/YahelR14" target="_blank" rel="noreferrer" aria-label="Ver GitHub de Edgar Rico, se abre en una pestaña nueva">
+          Ver GitHub
         </a>
       </div>
     </section>

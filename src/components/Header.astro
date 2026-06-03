@@ -5,6 +5,7 @@ const navItems = [
   { href: "/#proyectos", label: "Proyectos" },
   { href: "/#educacion", label: "Educación" },
   { href: "/#contacto", label: "Contacto" },
+  { href: "https://github.com/YahelR14", label: "GitHub", external: true },
 ];
 ---
 
@@ -20,7 +21,14 @@ const navItems = [
     <nav class="site-nav" aria-label="Secciones del sitio">
       {
         navItems.map((item) => (
-          <a href={item.href}>{item.label}</a>
+          <a
+            href={item.href}
+            target={item.external ? "_blank" : undefined}
+            rel={item.external ? "noreferrer" : undefined}
+            aria-label={item.external ? `${item.label} de Edgar Rico, se abre en una pestaña nueva` : undefined}
+          >
+            {item.label}
+          </a>
         ))
       }
     </nav>

@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-03T00:00:00-07:00",
+  "title": "Design System: Edgar Rico Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "bg": {
+        "role": "neutral",
+        "displayName": "Review White",
+        "canonical": "oklch(1 0 0)",
+        "tonalRamp": ["oklch(0.15 0 0)", "oklch(0.25 0 0)", "oklch(0.38 0 0)", "oklch(0.52 0 0)", "oklch(0.68 0 0)", "oklch(0.82 0 0)", "oklch(0.94 0 0)", "oklch(1 0 0)"]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Quiet Surface",
+        "canonical": "oklch(0.982 0.003 260)",
+        "tonalRamp": ["oklch(0.18 0.003 260)", "oklch(0.28 0.003 260)", "oklch(0.42 0.003 260)", "oklch(0.58 0.003 260)", "oklch(0.72 0.003 260)", "oklch(0.84 0.003 260)", "oklch(0.93 0.003 260)", "oklch(0.982 0.003 260)"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Portfolio Ink",
+        "canonical": "oklch(0.18 0.012 260)",
+        "tonalRamp": ["oklch(0.15 0.012 260)", "oklch(0.24 0.012 260)", "oklch(0.36 0.012 260)", "oklch(0.50 0.012 260)", "oklch(0.64 0.012 260)", "oklch(0.78 0.012 260)", "oklch(0.90 0.012 260)", "oklch(0.96 0.012 260)"]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Review Amber",
+        "canonical": "oklch(0.72 0.145 65)",
+        "tonalRamp": ["oklch(0.18 0.145 65)", "oklch(0.28 0.145 65)", "oklch(0.40 0.145 65)", "oklch(0.52 0.145 65)", "oklch(0.64 0.145 65)", "oklch(0.72 0.145 65)", "oklch(0.84 0.08 65)", "oklch(0.95 0.035 65)"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero and project detail titles only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Major section headings."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Cards, panels, and grouped evidence."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Readable project and profile copy."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Navigation, buttons, metadata, and chips."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "state-transition",
+        "value": "180ms ease",
+        "purpose": "Small hover and active-state feedback."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: reduce",
+        "purpose": "Collapse transitions and scroll behavior for reduced-motion users."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "header-stack",
+        "value": "900px"
+      },
+      {
+        "name": "mobile-single-column",
+        "value": "700px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary action for project navigation, contact, and resume flows.",
+      "html": "<a class=\"ds-button-primary\" href=\"#\">Ver proyectos</a>",
+      "css": ".ds-button-primary { display: inline-flex; min-height: 2.75rem; align-items: center; justify-content: center; border-radius: 999px; padding: 0.75rem 1.1rem; background: var(--color-accent-ink); color: var(--color-white); font-family: var(--font-body); font-size: 0.95rem; font-weight: var(--font-weight-bold); line-height: 1; text-decoration: none; transition: transform 180ms ease, background-color 180ms ease; } .ds-button-primary:hover { background: var(--color-ink); color: var(--color-white); } .ds-button-primary:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 4px; } .ds-button-primary:active { transform: translateY(1px); }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Secondary action with a quiet border and amber wash hover.",
+      "html": "<a class=\"ds-button-secondary\" href=\"#\">Contactar</a>",
+      "css": ".ds-button-secondary { display: inline-flex; min-height: 2.75rem; align-items: center; justify-content: center; border: 1px solid var(--color-line); border-radius: 999px; padding: 0.75rem 1.1rem; background: var(--color-white); color: var(--color-ink); font-family: var(--font-body); font-size: 0.95rem; font-weight: var(--font-weight-bold); line-height: 1; text-decoration: none; transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease; } .ds-button-secondary:hover { border-color: var(--color-accent); background: var(--color-accent-soft); color: var(--color-ink); } .ds-button-secondary:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 4px; } .ds-button-secondary:active { transform: translateY(1px); }"
+    },
+    {
+      "name": "Skill Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Compact technology or practice label.",
+      "html": "<span class=\"ds-chip\">Selenium WebDriver</span>",
+      "css": ".ds-chip { display: inline-flex; border-radius: 999px; background: var(--color-surface); color: var(--color-ink); padding: 0.42rem 0.65rem; font-family: var(--font-body); font-size: 0.92rem; font-weight: var(--font-weight-medium); line-height: 1; }"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "card-project",
+      "description": "Evidence card for a featured project from the Astro content collection.",
+      "html": "<article class=\"ds-project-card\"><div class=\"ds-project-card-topline\"><span class=\"ds-status\">En desarrollo</span><span>Analisis, UX/UI y desarrollo web</span></div><h3>CoffeeRank TJ</h3><p>Plataforma web para descubrir y resenar cafeterias locales.</p><div class=\"ds-tags\"><span>PHP</span><span>MySQL</span><span>CSS</span></div><a href=\"#\">Ver caso de estudio</a></article>",
+      "css": ".ds-project-card { display: grid; gap: 1.5rem; border: 1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-white); color: var(--color-ink); padding: 1.5rem; font-family: var(--font-body); } .ds-project-card h3 { margin: 0; max-width: 14ch; font-size: 1.45rem; font-weight: var(--font-weight-bold); line-height: 1.08; letter-spacing: -0.025em; } .ds-project-card p { margin: 0; color: var(--color-muted); line-height: 1.6; } .ds-project-card a { color: var(--color-ink); font-weight: var(--font-weight-bold); text-decoration-thickness: 0.08em; text-underline-offset: 0.2em; } .ds-project-card a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 4px; } .ds-project-card-topline { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; color: var(--color-muted); font-size: 0.9rem; } .ds-status { border-radius: 999px; background: var(--color-accent-soft); color: var(--color-accent-ink); padding: 0.3rem 0.55rem; font-weight: var(--font-weight-bold); } .ds-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; } .ds-tags span { border-radius: 999px; background: var(--color-surface); color: var(--color-ink); padding: 0.42rem 0.65rem; font-size: 0.92rem; font-weight: var(--font-weight-medium); }"
+    },
+    {
+      "name": "Compact Navigation",
+      "kind": "nav",
+      "refersTo": "site-nav",
+      "description": "Sticky portfolio navigation with quiet labels and a compact ER mark.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Secciones\"><a class=\"ds-brand\" href=\"#\"><span>ER</span>Edgar Rico</a><a href=\"#\">Perfil</a><a href=\"#\">Habilidades</a><a href=\"#\">Proyectos</a></nav>",
+      "css": ".ds-nav { display: flex; min-height: 4rem; align-items: center; gap: 0.5rem; border-bottom: 1px solid var(--color-line); background: var(--color-bg); font-family: var(--font-body); } .ds-nav a { border-radius: 999px; padding: 0.55rem 0.75rem; color: var(--color-muted); font-size: 0.95rem; font-weight: var(--font-weight-medium); text-decoration: none; white-space: nowrap; } .ds-nav a:hover { background: var(--color-surface); color: var(--color-ink); } .ds-nav a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 4px; } .ds-brand { display: inline-flex; align-items: center; gap: 0.75rem; color: var(--color-ink) !important; font-weight: var(--font-weight-bold) !important; } .ds-brand span { display: grid; width: 2.2rem; height: 2.2rem; place-items: center; border-radius: 999px; background: var(--color-accent-soft); color: var(--color-accent-ink); font-size: 0.84rem; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Evidence Notebook",
+    "overview": "The system should feel like a carefully prepared engineering notebook: plain enough to read under review pressure, specific enough to show judgment, and structured enough to connect claims with project evidence. It is a brand surface, but the brand is credibility through practice rather than decorative personality.",
+    "keyCharacteristics": [
+      "Neutral white and cool-gray surfaces with a honey amber accent used sparingly.",
+      "Large but bounded headings, readable body copy, and generous section rhythm.",
+      "Flat surfaces at rest, clear borders, and no decorative shadow system.",
+      "Cards only for distinct project evidence; other content uses spacing, dividers, and layout.",
+      "Semantic, static Astro-first implementation with visible focus and reduced-motion support."
+    ],
+    "rules": [
+      {
+        "name": "The Amber Ration Rule",
+        "body": "Amber is limited to emphasis and action. If amber covers more than a small fraction of a section, the page is becoming a theme instead of a portfolio.",
+        "section": "colors"
+      },
+      {
+        "name": "The No Beige Rule",
+        "body": "Do not translate warmth into cream, sand, or parchment backgrounds. Warmth belongs in the accent and the evidence copy, not the canvas.",
+        "section": "colors"
+      },
+      {
+        "name": "The Review-Speed Rule",
+        "body": "Type must support a two-minute scan by a recruiter or technical reviewer. If hierarchy depends on decorative effects, it fails.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Evidence Rule",
+        "body": "Do not add soft card shadows or glass effects to make content feel premium. Evidence should feel stable, not floating.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep the page full-width with readable inner content widths around 72rem.",
+      "Do use amber as a restrained accent for status, focus, emphasis, and the resume CTA.",
+      "Do use cards selectively for featured projects where grouping and action are useful.",
+      "Do keep keyboard focus visible with the amber 3px outline.",
+      "Do respect reduced motion and keep motion limited to state feedback.",
+      "Do connect visual sections to evidence: development, requirements, database design, UX/UI, and quality practices."
+    ],
+    "donts": [
+      "Don't create a generic centered developer portfolio template.",
+      "Don't use purple gradients, glassmorphism, decorative technology cliches, or oversized hero gimmicks.",
+      "Don't wrap the entire website inside one boxed container.",
+      "Don't turn every section into an identical card grid.",
+      "Don't use vague self-promotion where concrete project evidence can carry the claim.",
+      "Don't hide real project evidence behind decorative visuals."
+    ]
+  }
+}

@@ -3,6 +3,7 @@ interface SkillGroup {
   title: string;
   description: string;
   items: string[];
+  proof?: string;
 }
 
 interface Props {
@@ -27,6 +28,7 @@ const toId = (value: string) =>
         <div>
           <h3 id={`skill-${toId(group.title)}`}>{group.title}</h3>
           <p>{group.description}</p>
+          {group.proof && <p class="skill-group__proof">{group.proof}</p>}
         </div>
         <ul class="skill-tags" aria-label={`Tecnologías y prácticas de ${group.title}`}>
           {group.items.map((item) => (
